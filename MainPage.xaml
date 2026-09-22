@@ -2,41 +2,45 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TermostatAndroid.MainPage">
-    <VerticalStackLayout Spacing="10">
-        <Border
-    StrokeShape="RoundRectangle 15"
-    Padding="20"
-    Margin="10">
+    <VerticalStackLayout
+    Padding="30"
+    Spacing="15">
 
-        
+        <Label
+        Text="Termostat"
+        FontSize="30"
+        HorizontalOptions="Center" />
 
-            <Label
-            Text="Living"
-            FontSize="24"
-            FontAttributes="Bold" />
+        <Label
+        x:Name="IdLabel"
+        Text="ID: -"
+        FontSize="20" />
 
-            <Label x:Name="SetTempLabel"
-            Text="22.5 °C"
-            FontSize="40" />
+        <Label
+        x:Name="TempLabel"
+        Text="Temperatură: -"
+        FontSize="20" />
 
-            <Slider x:Name="SetTempSlider"
-            Minimum="15"
-            Maximum="30"
-           
-            ValueChanged="Slider_ValueChanged"  />
+        <Label
+        x:Name="HumLabel"
+        Text="Umiditate: -"
+        FontSize="20" />
 
-            <HorizontalStackLayout>
-                <Label Text="Heating:" />
-                <Switch IsToggled="True" />
-            </HorizontalStackLayout>
+        <Label
+        x:Name="SetpointLabel"
+        Text="Setpoint: -"
+        FontSize="20" />
 
-            <Button
-            Text="Settings"
-      
-            />
+        <Label
+        x:Name="RelayLabel"
+        Text="Relay: -"
+        FontSize="20" />
 
-    </Border>
+        <Button
+        Text="Get ESP Data"
+        Clicked="OnGetDataClicked" />
+
     </VerticalStackLayout>
-  
+
 
 </ContentPage>
