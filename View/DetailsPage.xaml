@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TermostatAndroid.View.DetailsPage"
+    Title="{Binding Id}">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="25"
+            Spacing="25">
+
+            <!-- CAMERA -->
+
+            <Label
+                Text="{Binding Id}"
+                FontSize="32"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+
+            <!-- TEMPERATURA ACTUALA -->
+
+            <VerticalStackLayout
+                Spacing="5">
+
+                <Label
+                    Text="Temperatura actuală"
+                    FontSize="18"
+                    HorizontalOptions="Center" />
+
+                <Label
+                    Text="{Binding Temp, StringFormat='{0:F1} °C'}"
+                    FontSize="42"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+
+
+            <!-- SETPOINT -->
+
+            <VerticalStackLayout
+                Spacing="10">
+
+                <Label
+                    Text="Temperatura dorită"
+                    FontSize="20"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Text="{Binding Setpoint, StringFormat='{0:F1} °C'}"
+                    FontSize="30"
+                    HorizontalOptions="Center" />
+
+                <Slider
+                    Minimum="10"
+                    Maximum="30"
+                    Value="{Binding Setpoint}" />
+
+            </VerticalStackLayout>
+
+
+            <!-- CALIBRARE -->
+
+            <VerticalStackLayout
+                Spacing="10">
+
+                <Label
+                    Text="Calibrare senzor"
+                    FontSize="20"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Text="{Binding CalibTemp, StringFormat='{0:F1} °C'}"
+                    FontSize="30"
+                    HorizontalOptions="Center" />
+
+                <Slider
+                    Minimum="-15"
+                    Maximum="15"
+                    Value="{Binding CalibTemp}" />
+
+            </VerticalStackLayout>
+
+
+            <!-- HYSTERESIS -->
+
+            <VerticalStackLayout
+                Spacing="10">
+
+                <Label
+                    Text="Histerezis"
+                    FontSize="20"
+                    FontAttributes="Bold" />
+
+                <Label
+                    Text="{Binding Hyst, StringFormat='{0:F1} °C'}"
+                    FontSize="25"
+                    HorizontalOptions="Center" />
+
+                <Slider
+                    Minimum="0.1"
+                    Maximum="2"
+                    Value="{Binding Hyst}" />
+
+            </VerticalStackLayout>
+
+
+            <!-- RELAY -->
+
+            <Label
+                Text="{Binding RelayText}"
+                FontSize="20"
+                HorizontalOptions="Center" />
+
+
+            <!-- SAVE -->
+
+            <Button
+                Text="SALVEAZĂ"
+                FontSize="20"
+                HeightRequest="55"
+                Command="{Binding SaveCommand}" />
+
+
+            <!-- STATUS -->
+
+            <Label
+                Text="{Binding StatusMessage}"
+                FontSize="16"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

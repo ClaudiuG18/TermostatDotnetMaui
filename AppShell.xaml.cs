@@ -1,10 +1,20 @@
-﻿namespace TermostatAndroid
+﻿using TermostatAndroid.View;
+
+namespace TermostatAndroid;
+
+public partial class AppShell : Shell
 {
-    public partial class AppShell : Shell
+    public AppShell()
     {
-        public AppShell()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+
+        Routing.RegisterRoute(
+            nameof(DetailsPage),
+            typeof(DetailsPage)
+        );
+        Routing.RegisterRoute(
+            nameof(SettingsPage),
+            typeof(SettingsPage)
+        );
     }
 }

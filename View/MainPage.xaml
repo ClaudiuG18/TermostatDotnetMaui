@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TermostatAndroid.MainPage"
+    Title="Termostat">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="15">
+
+            <!-- TITLU -->
+
+            <Label
+                Text="Termostat"
+                FontSize="32"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+
+            <!-- LISTA ESP-URI -->
+
+            <VerticalStackLayout
+                BindableLayout.ItemsSource="{Binding EspCards}"
+                Spacing="15">
+
+                <BindableLayout.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <Border
+                            Padding="20"
+                            IsVisible="{Binding IsOnline}">
+
+                            <VerticalStackLayout
+                                Spacing="10">
+
+                                <!-- NUME -->
+
+                                <Label
+                                    Text="{Binding Name}"
+                                    FontSize="26"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center" />
+
+
+                                <!-- TEMPERATURA -->
+
+                                <Label
+                                    Text="Temperatură"
+                                    FontSize="18"
+                                    HorizontalOptions="Center" />
+
+                                <Label
+                                    Text="{Binding Temp, StringFormat='{0:F1} °C'}"
+                                    FontSize="40"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center" />
+
+
+                                <!-- UMIDITATE -->
+
+                                <Label
+                                    Text="{Binding Hum, StringFormat='Umiditate: {0:F0} %'}"
+                                    FontSize="20"
+                                    HorizontalOptions="Center" />
+
+
+                                <!-- SETPOINT -->
+
+                                <Label
+                                    Text="{Binding Setpoint, StringFormat='Setpoint: {0:F1} °C'}"
+                                    FontSize="20"
+                                    HorizontalOptions="Center" />
+
+
+                                <!-- RELAY -->
+
+                                <Label
+                                    Text="{Binding Relay, StringFormat='Relay: {0}'}"
+                                    FontSize="20"
+                                    HorizontalOptions="Center" />
+
+
+                                <!-- DETALII -->
+
+                                <Button
+                                    Text="Detalii"
+                                    Clicked="OnDetailsClicked" />
+
+                            </VerticalStackLayout>
+
+                        </Border>
+
+                    </DataTemplate>
+
+                </BindableLayout.ItemTemplate>
+
+            </VerticalStackLayout>
+
+
+            <!-- ACTUALIZARE -->
+
+            <Button
+                Text="Actualizează"
+                Command="{Binding RefreshCommand}" />
+
+
+            <!-- SETĂRI -->
+
+            <Button
+                Text="⚙️ Setări"
+                Clicked="OnSettingsClicked" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
