@@ -7,7 +7,7 @@ An Android application built with C# and .NET MAUI to monitor and control ESP-ba
 ### Room Overview
 Displays connected rooms, current temperature, humidity, target temperature, heating status, and device connectivity.
 
-![Room overview](screenshots/room-overview.jpg)
+![Room overview](screenshots/Screenshot_20261009_172705.jpg)
 
 ### Room Details
 Provides controls for the target temperature and sensor calibration, along with the current device status.
