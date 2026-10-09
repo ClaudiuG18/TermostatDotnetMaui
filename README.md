@@ -12,7 +12,7 @@ Displays connected rooms, current temperature, humidity, target temperature, hea
 ### Room Details
 Provides controls for the target temperature and sensor calibration, along with the current device status.
 
-![Room details](screenshots/room-details.jpg)
+![Room details](screenshots/Screenshot_20261009_172816.jpg)
 
 ## Features
 
